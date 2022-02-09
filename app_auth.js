@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 require('dotenv').config();
-
 const app = express();
 
 var corsOptions = {
@@ -42,6 +41,7 @@ app.post('/api_register', (req, res) => {
 });
 
 app.post('/api_login', (req, res) => {
+    console.log("login");
     Users.findOne({ where: { name: req.body.name } })
         .then( usr => {
 
