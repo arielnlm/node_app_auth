@@ -62,7 +62,7 @@ app.post('/api_login', (req, res) => {
         .catch( err => res.status(500).json(err) );
 });
 
-app.listen({ port: 7000 }, async () => {
+app.listen({ port: process.env.PORT || 7000 }, async () => {
     console.log("Startovan port 7000");
     await sequelize.authenticate();
 });
